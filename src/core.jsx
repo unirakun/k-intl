@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { getDisplayName, getLocale } from './utils'
+import { shallowEqual, wrapDisplayName } from 'recompose'
+import getLocale from './getLocale'
 import format from './format'
 
 export default config => WrappedComponent => class extends Component {
-  static displayName = getDisplayName(WrappedComponent)
+  static displayName = wrapDisplayName(WrappedComponent, 'Intl')
 
   static contextTypes = {
     store: () => null, // this is to avoid importing prop-types
@@ -11,7 +12,7 @@ export default config => WrappedComponent => class extends Component {
 
   constructor(props, context) {
     super(props, context)
-    this.locale = {}
+    this.labels = {}
     this.state = {
       injectedProps: {},
     }
@@ -33,19 +34,16 @@ export default config => WrappedComponent => class extends Component {
   format = (nextProps) => {
     /* take locale on `config.locale` reducer */
     const locale = getLocale(this.context)
-
+    const labels = format(locale)(
+      config,
+      nextProps || this.props,
+    )
     /* not change labels when the sub store local not change */
-    if (locale === this.locale) return
-    this.locale = locale
-
+    if (shallowEqual(labels, this.labels)) return
+    this.labels = labels
     this.setState(state => ({
       ...state,
-      injectedProps: {
-        labels: format(this.context.store.getState().config.locale)(
-          config,
-          nextProps || this.props,
-        ),
-      },
+      injectedProps: { labels },
     }))
   }
 

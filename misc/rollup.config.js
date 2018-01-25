@@ -16,7 +16,6 @@ export default {
     globals: {
       lodash: '_',
       react: 'React',
-      recompose: 'recompose',
     },
   },
   plugins: [
@@ -27,5 +26,5 @@ export default {
     }),
     uglify(),
   ],
-  external: ['redux', 'lodash', 'react', 'recompose'],
+  external: ['redux', 'lodash', 'react'],
 }

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react/wrapDisplayName should print a displayName 1`] = `
+Object {
+  "Component.constructor.name": "intl (Component.constructor.name)",
+  "Component.displayName": "intl (Component.displayName)",
+  "Component.name": "intl (Component.name)",
+  "Unknown": "intl (Unknown)",
+}
+`;
+
+exports[`react/wrapDisplayName should print a displayName with custom name : wrapper 1`] = `
+Object {
+  "Component.constructor.name": "wrapper (Component.constructor.name)",
+  "Component.displayName": "wrapper (Component.displayName)",
+  "Component.name": "wrapper (Component.name)",
+  "Unknown": "wrapper (Unknown)",
+}
+`;

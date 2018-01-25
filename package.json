@@ -15,8 +15,7 @@
   },
   "peerDependencies": {
     "lodash": "^4.17.4",
-    "react": "^16.2.0",
-    "recompose": "^0.26.0"
+    "react": "^16.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -42,7 +41,6 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "recompose": "^0.26.0",
     "rollup": "^0.54.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",

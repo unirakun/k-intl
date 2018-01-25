@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { shallowEqual, wrapDisplayName } from 'recompose'
-import getLocale from './getLocale'
+import shallowEqual from 'fbjs/lib/shallowEqual'
+import { wrapDisplayName, getLocale } from './utils'
 import format from './format'
 
 export default config => WrappedComponent => class extends Component {

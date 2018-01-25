@@ -16,6 +16,7 @@ export default {
     globals: {
       lodash: '_',
       react: 'React',
+      'fbjs/lib/shallowEqual': 'shallowEqual',
     },
   },
   plugins: [
@@ -26,5 +27,5 @@ export default {
     }),
     uglify(),
   ],
-  external: ['redux', 'lodash', 'react'],
+  external: ['redux', 'lodash', 'react', 'fbjs/lib/shallowEqual'],
 }

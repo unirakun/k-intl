@@ -19,19 +19,19 @@ export default config => WrappedComponent => class extends Component {
   }
 
   componentWillMount() {
-    this.unsubscribe = this.context.store.subscribe(() => { this.format() })
-    this.format()
+    this.unsubscribe = this.context.store.subscribe(() => { this.inject() })
+    this.inject()
   }
 
   componentWillReceiveProps(nextProps) {
-    this.format(nextProps)
+    this.inject(nextProps)
   }
 
   componentWillUnmount() {
     this.unsubscribe()
   }
 
-  format = (nextProps) => {
+  inject = (nextProps) => {
     /* take locale on `config.locale` reducer */
     const locale = getLocale(this.context)
     const labels = format(locale)(

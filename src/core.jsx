@@ -39,7 +39,7 @@ export default config => WrappedComponent => class extends Component {
       nextProps || this.props,
     )
     /* not change labels when the formated labels is identical */
-    if (shallowEqual(this.state.injectedProps.labels, this.labels)) return
+    if (shallowEqual(this.state.injectedProps.labels, labels)) return
     this.setState(state => ({
       ...state,
       injectedProps: { labels },

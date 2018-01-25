@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { getDisplayName, getLocale } from './utils'
 import format from './format'
-import getDisplayName from './getDisplayName'
 
 export default config => WrappedComponent => class extends Component {
   static displayName = getDisplayName(WrappedComponent)
@@ -31,20 +31,20 @@ export default config => WrappedComponent => class extends Component {
   }
 
   format = (nextProps) => {
-    if (!this.context.store
-      || !this.context.store.getState()
-      || !this.context.store.getState().locale) {
-      throw new Error('/ HOC k-intl / locale is not readable. make sure that this one is available at the root of your redux store')
-    }
+    /* take locale on `config.locale` reducer */
+    const locale = getLocale(this.context)
 
     /* not change labels when the sub store local not change */
-    if (this.context.store.getState().locale === this.locale) return
-    this.locale = this.context.store.getState().locale
+    if (locale === this.locale) return
+    this.locale = locale
 
     this.setState(state => ({
       ...state,
       injectedProps: {
-        labels: format(this.context.store.getState().locale)(config, nextProps || this.props),
+        labels: format(this.context.store.getState().config.locale)(
+          config,
+          nextProps || this.props,
+        ),
       },
     }))
   }

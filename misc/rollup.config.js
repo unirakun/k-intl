@@ -15,6 +15,8 @@ export default {
     sourcemap: path.resolve(pkg.main),
     globals: {
       lodash: '_',
+      react: 'React',
+      'fbjs/lib/shallowEqual': 'shallowEqual',
     },
   },
   plugins: [
@@ -25,5 +27,5 @@ export default {
     }),
     uglify(),
   ],
-  external: ['redux', 'lodash'],
+  external: ['redux', 'lodash', 'react', 'fbjs/lib/shallowEqual'],
 }

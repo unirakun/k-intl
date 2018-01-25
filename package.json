@@ -1,6 +1,6 @@
 {
   "name": "k-intl",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "ci": "npm-run-all --parallel lint coveralls"
   },
   "peerDependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "react": "^16.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

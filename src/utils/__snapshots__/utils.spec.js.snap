@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`react/wrapDisplayName should print a displayName 1`] = `
+exports[`utils/wrapDisplayName should print a displayName 1`] = `
 Object {
   "Component.constructor.name": "intl (Component.constructor.name)",
   "Component.displayName": "intl (Component.displayName)",
@@ -9,7 +9,7 @@ Object {
 }
 `;
 
-exports[`react/wrapDisplayName should print a displayName with custom name : wrapper 1`] = `
+exports[`utils/wrapDisplayName should print a displayName with custom name : wrapper 1`] = `
 Object {
   "Component.constructor.name": "wrapper (Component.constructor.name)",
   "Component.displayName": "wrapper (Component.displayName)",

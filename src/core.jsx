@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import shallowEqual from 'fbjs/lib/shallowEqual'
-import { wrapDisplayName, getLocale } from './utils'
+import { wrapDisplayName, getLocale, getLang, getFormats } from './utils'
 import format from './format'
 
 export default config => WrappedComponent => class extends Component {
@@ -34,7 +34,9 @@ export default config => WrappedComponent => class extends Component {
   inject = (nextProps) => {
     /* take locale on `config.locale` reducer */
     const locale = getLocale(this.context)
-    const labels = format(locale)(
+    const lang = getLang(this.context)
+    const formats = getFormats(this.context)
+    const labels = format(locale, lang, formats)(
       config,
       nextProps || this.props,
     )

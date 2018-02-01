@@ -17,6 +17,7 @@ export default {
       lodash: '_',
       react: 'React',
       'fbjs/lib/shallowEqual': 'shallowEqual',
+      'intl-messageformat': 'IntlMessageFormat',
     },
   },
   plugins: [
@@ -27,5 +28,12 @@ export default {
     }),
     uglify(),
   ],
-  external: ['redux', 'lodash', 'react', 'fbjs/lib/shallowEqual'],
+  external: [
+    'redux',
+    'lodash',
+    'react',
+    'fbjs/lib/shallowEqual',
+    'intl-messageformat',
+    path.resolve('locale-data/index.js'),
+  ],
 }

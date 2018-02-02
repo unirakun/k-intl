@@ -12,7 +12,7 @@ export default config => WrappedComponent => class extends Component {
 
   constructor(props, context) {
     super(props, context)
-    this.labels = {}
+    this.messages = {}
     this.state = {
       injectedProps: {},
     }
@@ -36,15 +36,15 @@ export default config => WrappedComponent => class extends Component {
     const locale = getLocale(this.context)
     const lang = getLang(this.context)
     const formats = getFormats(this.context)
-    const labels = format(locale, lang, formats)(
+    const messages = format(locale, lang, formats)(
       config,
       nextProps || this.props,
     )
-    /* not change labels when the formated labels is identical */
-    if (shallowEqual(this.state.injectedProps.labels, labels)) return
+    /* not change messages when the formated messages is identical */
+    if (shallowEqual(this.state.injectedProps.messages, messages)) return
     this.setState(state => ({
       ...state,
-      injectedProps: { labels },
+      injectedProps: { messages },
     }))
   }
 

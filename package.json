@@ -10,9 +10,13 @@
     "build": "npm-run-all build:*",
     "lint:js": "eslint --ext js src",
     "lint": "npm-run-all --parallel lint:*",
-    "test": "jest",
-    "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.js && cat ./coverage/lcov.info | coveralls",
+    "test": "yarn build:data && jest",
+    "coveralls": "yarn build:data && jest --coverage --collectCoverageFrom=src/**/*.js && cat ./coverage/lcov.info | coveralls",
     "ci": "npm-run-all --parallel lint coveralls"
+  },
+  "dependencies": {
+    "intl-messageformat": "^2.2.0",
+    "react-intl": "^2.4.0"
   },
   "peerDependencies": {
     "lodash": "^4.17.4",
@@ -90,6 +94,7 @@
       }
     }
   },
+  "eslintIgnore": ["src/en.js"],
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": [
@@ -113,10 +118,7 @@
     }
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./misc/test-setup.js"
-  },
-  "dependencies": {
-    "intl-messageformat": "^2.2.0",
-    "react-intl": "^2.4.0"
+    "setupTestFrameworkScriptFile": "./misc/test-setup.js",
+    "coveragePathIgnorePatterns": ["<rootDir>/src/en.js"]
   }
 }

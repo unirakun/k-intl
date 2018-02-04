@@ -9,6 +9,7 @@ import uglify from 'rollup-plugin-uglify'
 
 const DEFAULT_LOCALE = 'en'
 const DEFAULT_MAP = new Map()
+const directoryData = 'locale-data/'
 
 const cldrData = extractCLDRData({
   pluralRules: true,
@@ -50,8 +51,8 @@ const writeUMDFile = (filename, module) => {
     .then(() => filename)
 }
 
-function writeFile(filename, contents) {
-  return new Promise((resolve, reject) => {
+const writeFile = (filename, contents) =>
+  new Promise((resolve, reject) => {
     fs.writeFile(
       filename,
       contents,
@@ -60,22 +61,27 @@ function writeFile(filename, contents) {
         else resolve(p.resolve(filename))
       },
     )
-  })
-}
+  });
 
 // -----------------------------------------------------------------------------
+const run = () => {
+  if (fs.existsSync(directoryData)) return
 
-mkdirpSync('locale-data/')
+  mkdirpSync(directoryData)
 
-const defaultData = createDataModule(cldrDataByLocale.get(DEFAULT_LOCALE))
-writeFile(`src/${DEFAULT_LOCALE}.js`, defaultData)
+  const defaultData = createDataModule(cldrDataByLocale.get(DEFAULT_LOCALE))
+  writeFile(`src/${DEFAULT_LOCALE}.js`, defaultData)
 
-const allData = createDataModule([...cldrDataByLocale.values()])
-writeUMDFile('locale-data/index.js', allData)
+  const allData = createDataModule([...cldrDataByLocale.values()])
+  writeUMDFile(`${directoryData}index.js`, allData)
 
-cldrDataByLang.forEach((data, lang) => {
-  writeUMDFile(`locale-data/${lang}.js`, createDataModule(data))
-})
+  cldrDataByLang.forEach((data, lang) => {
+    writeUMDFile(`${directoryData}${lang}.js`, createDataModule(data))
+  })
 
-process.on('unhandledRejection', (reason) => { throw reason })
-console.log('> Writing locale data files...')
+  process.on('unhandledRejection', (reason) => { throw reason })
+  console.log(`Writing locale data files to ${directoryData}...`)
+}
+
+run()
+

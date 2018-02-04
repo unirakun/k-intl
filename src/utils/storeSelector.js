@@ -22,8 +22,8 @@ export const getFormats = (context) => {
   if (!context.store
     || !context.store.getState()
     || !context.store.getState().config
-    || !context.store.getState().config.getFormats) {
+    || !context.store.getState().config.formats) {
     return {}
   }
-  return context.store.getState().config.lang
+  return context.store.getState().config.formats
 }

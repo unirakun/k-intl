@@ -5,7 +5,7 @@ export default {
     withTwoParam: 'with {one} {two} parameter',
   },
   plural: {
-    simple: 'You have {param, plural, =0 {no parameters.} =1 {one parameter.} other {# parameters.}}',
+    simple: 'You have {param, plural, =0 {no parameter.} =1 {one parameter.} other {# parameters.}}',
   },
   number: {
     withoutParam: 'no parameter',

@@ -12,7 +12,7 @@ const customFormats = {
 }
 
 const keyValueResources = (lang, f) => ({
-  language: formatter(lang).resolvedOptions(),
+  language: formatter('', lang).resolvedOptions(),
   'simple.withoutParam': f({ test: 'simple.withoutParam' }),
   'simple.withOneParam': f({ test: 'simple.withOneParam' }, { test: { one: 'ONE' } }),
   'simple.withTwoParam': f({ test: 'simple.withTwoParam' }, { test: { one: 'ONE', two: 'TWO' } }),
@@ -33,7 +33,7 @@ const keyValueResources = (lang, f) => ({
 
 const tester = (lang, locale) =>
   it(`should format message with ${lang} Locale`, () => {
-    expect(keyValueResources(lang, format(locale, lang, customFormats))).toMatchSnapshot()
+    expect(keyValueResources(lang, format(lang, locale, customFormats))).toMatchSnapshot()
   })
 
 describe('src/format', () => {

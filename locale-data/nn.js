@@ -1,0 +1,1 @@
+!function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(n["k-intl"]=n["k-intl"]||{},n["k-intl"].nn=e())}(this,function(){"use strict";return[{locale:"nn",pluralRuleFunction:function(n,e){return e?"other":1==n?"one":"other"}}]});

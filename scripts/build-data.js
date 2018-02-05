@@ -13,7 +13,7 @@ const directoryData = 'locale-data/'
 
 const cldrData = extractCLDRData({
   pluralRules: true,
-  relativeFields: true,
+  relativeFields: false, // disable relativeFields by default
 })
 
 const cldrDataByLocale = new Map(Object.keys(cldrData).map(locale => [locale, cldrData[locale]]))

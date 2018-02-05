@@ -3,25 +3,23 @@ import IntlMessageFormat from 'intl-messageformat'
 import defaultLocaleData from './en'
 import { addLocaleData } from './utils'
 
-const defaultLabel = {}
+const defaultMessages = {}
 const browserLanguage = window.navigator.language || window.navigator.browserLanguage
 /* add default locale on startup, import on src folder */
 addLocaleData(defaultLocaleData)
 
-export const formatter =
-  (lang, label = '', customFormat) => new IntlMessageFormat(label, lang, customFormat)
+export const formatter = (...args) => new IntlMessageFormat(...args)
 
-export default (locale, lang = browserLanguage, customFormats) => (config, componentProps) =>
+export default (lang = browserLanguage, locale, customFormats) => (config, componentProps) =>
   Object
     .keys(config)
     .reduce((acc, curr) => {
-      const label = get(locale, config[curr])
-      if (label && componentProps && componentProps[curr]) {
-        /* use formatJS to parse message */
+      const message = get(locale, config[curr])
+      if (message && componentProps && componentProps[curr]) {
         return {
           ...acc,
-          [curr]: formatter(lang, label, customFormats).format(componentProps[curr]),
+          [curr]: formatter(message, lang, customFormats).format(componentProps[curr]),
         }
       }
-      return { ...acc, [curr]: label }
-    }, defaultLabel)
+      return { ...acc, [curr]: message }
+    }, defaultMessages)

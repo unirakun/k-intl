@@ -1,29 +1,14 @@
-export const getLocale = (context) => {
-  if (!context.store
-    || !context.store.getState()
-    || !context.store.getState().config
-    || !context.store.getState().config.locale) {
-    throw new Error('/ HOC k-intl / locale is not readable. make sure that this one is available at `config.local` on your redux store')
+const getConfig = (field, mandatory = true) => (context) => {
+  const config = context.store
+  && context.store.getState()
+  && context.store.getState().config
+
+  if ((!config || !config[field]) && mandatory) {
+    throw new Error(`/ HOC k-intl / ${field} is not readable. Make sure that this one is available at config.${field} on your redux store`)
   }
-  return context.store.getState().config.locale
+  return config[field]
 }
 
-export const getLang = (context) => {
-  if (!context.store
-    || !context.store.getState()
-    || !context.store.getState().config
-    || !context.store.getState().config.lang) {
-    throw new Error('/ HOC k-intl / lang is not readable. make sure that this one is available at `config.lang` on your redux store')
-  }
-  return context.store.getState().config.lang
-}
-
-export const getFormats = (context) => {
-  if (!context.store
-    || !context.store.getState()
-    || !context.store.getState().config
-    || !context.store.getState().config.formats) {
-    return {}
-  }
-  return context.store.getState().config.formats
-}
+export const getLocale = getConfig('locale')
+export const getLang = getConfig('lang')
+export const getFormats = getConfig('formats', false)

@@ -1,6 +1,7 @@
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import defaultLocaleData from 'k-intl/locale-data/en'
 import { get } from 'lodash'
 import IntlMessageFormat from 'intl-messageformat'
-import defaultLocaleData from './en'
 import { addLocaleData } from './utils'
 
 const defaultMessages = {}

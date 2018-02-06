@@ -18,6 +18,7 @@ export default {
       react: 'React',
       'fbjs/lib/shallowEqual': 'shallowEqual',
       'intl-messageformat': 'IntlMessageFormat',
+      'k-intl/locale-data/en': 'defaultLocaleData',
     },
   },
   plugins: [
@@ -34,6 +35,6 @@ export default {
     'react',
     'fbjs/lib/shallowEqual',
     'intl-messageformat',
-    path.resolve('locale-data/index.js'),
+    'k-intl/locale-data/en',
   ],
 }

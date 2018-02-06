@@ -32,9 +32,11 @@ export default config => WrappedComponent => class extends Component {
   }
 
   inject = (nextProps) => {
-    /* take locale on `config.locale` reducer */
+    /* take locale on `config.lang` reducer */
     const lang = getLang(this.context)
+    /* take locale on `config.locale` reducer */
     const locale = getLocale(this.context)
+    /* take locale on `config.formats` reducer */
     const formats = getFormats(this.context)
     const messages = format(lang, locale, formats)(
       config,

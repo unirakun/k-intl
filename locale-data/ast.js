@@ -1,0 +1,1 @@
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t["k-intl"]=t["k-intl"]||{},t["k-intl"].ast=e())}(this,function(){"use strict";return[{locale:"ast",pluralRuleFunction:function(t,e){var n=!String(t).split(".")[1];return e?"other":1==t&&n?"one":"other"}}]});

@@ -1,15 +1,26 @@
-import { get, template } from 'lodash'
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import defaultLocaleData from 'k-intl/locale-data/en'
+import { get } from 'lodash'
+import IntlMessageFormat from 'intl-messageformat'
+import { addLocaleData } from './utils'
 
-const interpolate = /{{([\s\S]+?)}}/g
-const defaultLabel = {}
+const defaultMessages = {}
+const browserLanguage = window.navigator.language || window.navigator.browserLanguage
+/* add default locale on startup, import on src folder */
+addLocaleData(defaultLocaleData)
 
-export default locale => (config, componentProps) =>
+export const formatter = (...args) => new IntlMessageFormat(...args)
+
+export default (lang = browserLanguage, locale, customFormats) => (config, componentProps) =>
   Object
     .keys(config)
     .reduce((acc, curr) => {
-      const label = get(locale, config[curr])
-      if (componentProps && componentProps[curr]) {
-        return { ...acc, [curr]: template(label, { interpolate })(componentProps[curr]) }
+      const message = get(locale, config[curr])
+      if (message && componentProps && componentProps[curr]) {
+        return {
+          ...acc,
+          [curr]: formatter(message, lang, customFormats).format(componentProps[curr]),
+        }
       }
-      return { ...acc, [curr]: label }
-    }, defaultLabel)
+      return { ...acc, [curr]: message }
+    }, defaultMessages)

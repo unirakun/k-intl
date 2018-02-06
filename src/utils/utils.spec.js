@@ -3,7 +3,7 @@ import wrapDisplayName from './wrapDisplayName'
 
 const wrapperName = 'wrapper'
 
-describe('react/wrapDisplayName', () => {
+describe('utils/wrapDisplayName', () => {
   it(`should print a displayName with custom name : ${wrapperName}`, () => {
     expect({
       'Component.displayName': wrapDisplayName({ displayName: 'Component.displayName' }, wrapperName),

@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/format should format message with EN Locale 1`] = `
+Object {
+  "language": Object {
+    "locale": "en",
+  },
+  "number.withOneParam": Object {
+    "test": "with 1 parameter",
+  },
+  "number.withOneParam.thousand": Object {
+    "test": "with 1,000 parameter",
+  },
+  "number.withPercentParam": Object {
+    "test": "with 50% parameter",
+  },
+  "number.withUSDFormat": Object {
+    "test": "with $1,234.00 parameter",
+  },
+  "number.withoutParam": Object {
+    "test": "no parameter",
+  },
+  "plural.simple.noparam": Object {
+    "test": "You have {param, plural, =0 {no parameter.} =1 {one parameter.} other {# parameters.}}",
+  },
+  "plural.simple.one": Object {
+    "test": "You have one parameter.",
+  },
+  "plural.simple.thousand": Object {
+    "test": "You have 1,000 parameters.",
+  },
+  "plural.simple.two": Object {
+    "test": "You have 2 parameters.",
+  },
+  "plural.simple.zero": Object {
+    "test": "You have no parameter.",
+  },
+  "select.gender.female": Object {
+    "test": "She will respond shortly.",
+  },
+  "select.gender.male": Object {
+    "test": "He will respond shortly.",
+  },
+  "select.gender.shemale": Object {
+    "test": "They will respond shortly.",
+  },
+  "simple.withOneParam": Object {
+    "test": "with ONE parameter",
+  },
+  "simple.withTwoParam": Object {
+    "test": "with ONE TWO parameter",
+  },
+  "simple.withoutParam": Object {
+    "test": "no parameter",
+  },
+}
+`;
+
+exports[`src/format should format message with FR Locale 1`] = `
+Object {
+  "language": Object {
+    "locale": "fr",
+  },
+  "number.withOneParam": Object {
+    "test": "avec 1 paramètre",
+  },
+  "number.withOneParam.thousand": Object {
+    "test": "avec 1,000 paramètre",
+  },
+  "number.withPercentParam": Object {
+    "test": "avec 50% paramètre",
+  },
+  "number.withUSDFormat": Object {
+    "test": "avec US$ 1,234.00 paramètre",
+  },
+  "number.withoutParam": Object {
+    "test": "aucun paramètre",
+  },
+  "plural.simple.noparam": Object {
+    "test": "vous avez {param, plural, =0 {aucun paramètre.} =1 {one paramètre.} other {# paramètres.}}",
+  },
+  "plural.simple.one": Object {
+    "test": "vous avez one paramètre.",
+  },
+  "plural.simple.thousand": Object {
+    "test": "vous avez 1,000 paramètres.",
+  },
+  "plural.simple.two": Object {
+    "test": "vous avez 2 paramètres.",
+  },
+  "plural.simple.zero": Object {
+    "test": "vous avez aucun paramètre.",
+  },
+  "select.gender.female": Object {
+    "test": "Elle répondra sous peu.",
+  },
+  "select.gender.male": Object {
+    "test": "Il répondra sous peu.",
+  },
+  "select.gender.shemale": Object {
+    "test": "ça répondra sous peu.",
+  },
+  "simple.withOneParam": Object {
+    "test": "avec ONE paramètre",
+  },
+  "simple.withTwoParam": Object {
+    "test": "avec ONE TWO paramètre",
+  },
+  "simple.withoutParam": Object {
+    "test": "aucun paramètre",
+  },
+}
+`;

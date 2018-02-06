@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import shallowEqual from 'fbjs/lib/shallowEqual'
-import { wrapDisplayName, getLocale } from './utils'
+import { wrapDisplayName, getLocale, getLang, getFormats } from './utils'
 import format from './format'
 
 export default config => WrappedComponent => class extends Component {
@@ -12,7 +12,7 @@ export default config => WrappedComponent => class extends Component {
 
   constructor(props, context) {
     super(props, context)
-    this.labels = {}
+    this.messages = {}
     this.state = {
       injectedProps: {},
     }
@@ -32,17 +32,21 @@ export default config => WrappedComponent => class extends Component {
   }
 
   inject = (nextProps) => {
+    /* take locale on `config.lang` reducer */
+    const lang = getLang(this.context)
     /* take locale on `config.locale` reducer */
     const locale = getLocale(this.context)
-    const labels = format(locale)(
+    /* take locale on `config.formats` reducer */
+    const formats = getFormats(this.context)
+    const messages = format(lang, locale, formats)(
       config,
       nextProps || this.props,
     )
-    /* not change labels when the formated labels is identical */
-    if (shallowEqual(this.state.injectedProps.labels, labels)) return
+    /* not change messages when the formated messages is identical */
+    if (shallowEqual(this.state.injectedProps.messages, messages)) return
     this.setState(state => ({
       ...state,
-      injectedProps: { labels },
+      injectedProps: { messages },
     }))
   }
 

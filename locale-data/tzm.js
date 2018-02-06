@@ -1,0 +1,1 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e["k-intl"]=e["k-intl"]||{},e["k-intl"].tzm=t())}(this,function(){"use strict";return[{locale:"tzm",pluralRuleFunction:function(e,t){var n=String(e).split("."),o=Number(n[0])==e;return t?"other":0==e||1==e||o&&e>=11&&e<=99?"one":"other"}}]});

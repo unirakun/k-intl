@@ -8,10 +8,10 @@
     "build:data": "babel-node scripts/build-data",
     "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
     "build": "npm-run-all build:*",
-    "lint:js": "eslint --ext js src",
+    "lint:js": "eslint --ext js,jsx src",
     "lint": "npm-run-all --parallel lint:*",
     "test": "jest",
-    "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.js && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx} && cat ./coverage/lcov.info | coveralls",
     "ci": "npm-run-all --parallel lint coveralls"
   },
   "dependencies": {

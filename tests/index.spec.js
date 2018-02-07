@@ -29,11 +29,22 @@ const keyValueResources = (lang, f) => ({
   'select.gender.male': f({ test: 'select.gender' }, { test: { gender: 'male' } }),
   'select.gender.female': f({ test: 'select.gender' }, { test: { gender: 'female' } }),
   'select.gender.shemale': f({ test: 'select.gender' }, { test: { gender: 'shemale' } }),
+  'string.simple': f('simple'),
+  'string.simple.withoutParam': f('simple.withoutParam'),
+  'string.simple.withOneParam': f('simple.withOneParam', { withOneParam: { one: 'ONE' } }),
+  'string.simple.all.one': f('simple', { withOneParam: { one: 'ONE' } }),
+  'string.simple.all.two': f('simple', { withTwoParam: { one: 'ONE', two: 'TWO' } }),
+  'string.simple.all.one.two': f('simple', { withTwoParam: { one: 'ONE', two: 'TWO' }, withOneParam: { one: 'ONE' } }),
+  'string.noExist': f('noExist'),
+  'string.path.noExist': f('no.exist'),
+  'number.noExist': f('number.exist'),
+  'number.noExist.withOneParam': f({ test: 'number.noExist' }, { test: { one: 1 } }),
 })
 
 const tester = (lang, locale) =>
   it(`should format message with ${lang} Locale`, () => {
     expect(keyValueResources(lang, format(lang, locale, customFormats))).toMatchSnapshot()
+    expect(keyValueResources(lang, format(lang, undefined))).toMatchSnapshot()
   })
 
 describe('src/format', () => {

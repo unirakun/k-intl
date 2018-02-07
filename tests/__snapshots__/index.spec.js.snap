@@ -5,6 +5,12 @@ Object {
   "language": Object {
     "locale": "en",
   },
+  "number.noExist": Object {
+    "exist": "",
+  },
+  "number.noExist.withOneParam": Object {
+    "test": "",
+  },
   "number.withOneParam": Object {
     "test": "with 1 parameter",
   },
@@ -53,6 +59,72 @@ Object {
   "simple.withoutParam": Object {
     "test": "no parameter",
   },
+  "string.noExist": Object {
+    "noExist": "",
+  },
+  "string.path.noExist": Object {
+    "exist": "",
+  },
+  "string.simple": Object {
+    "withOneParam": "with {one} parameter",
+    "withTwoParam": "with {one} {two} parameter",
+    "withoutParam": "no parameter",
+  },
+  "string.simple.all.one": Object {
+    "withOneParam": "with ONE parameter",
+    "withTwoParam": "with {one} {two} parameter",
+    "withoutParam": "no parameter",
+  },
+  "string.simple.all.one.two": Object {
+    "withOneParam": "with ONE parameter",
+    "withTwoParam": "with ONE TWO parameter",
+    "withoutParam": "no parameter",
+  },
+  "string.simple.all.two": Object {
+    "withOneParam": "with {one} parameter",
+    "withTwoParam": "with ONE TWO parameter",
+    "withoutParam": "no parameter",
+  },
+  "string.simple.withOneParam": Object {
+    "withOneParam": "with ONE parameter",
+  },
+  "string.simple.withoutParam": Object {
+    "withoutParam": "no parameter",
+  },
+}
+`;
+
+exports[`src/format should format message with EN Locale 2`] = `
+Object {
+  "language": Object {
+    "locale": "en",
+  },
+  "number.noExist": Object {},
+  "number.noExist.withOneParam": Object {},
+  "number.withOneParam": Object {},
+  "number.withOneParam.thousand": Object {},
+  "number.withPercentParam": Object {},
+  "number.withUSDFormat": Object {},
+  "number.withoutParam": Object {},
+  "plural.simple.noparam": Object {},
+  "plural.simple.one": Object {},
+  "plural.simple.thousand": Object {},
+  "plural.simple.two": Object {},
+  "plural.simple.zero": Object {},
+  "select.gender.female": Object {},
+  "select.gender.male": Object {},
+  "select.gender.shemale": Object {},
+  "simple.withOneParam": Object {},
+  "simple.withTwoParam": Object {},
+  "simple.withoutParam": Object {},
+  "string.noExist": Object {},
+  "string.path.noExist": Object {},
+  "string.simple": Object {},
+  "string.simple.all.one": Object {},
+  "string.simple.all.one.two": Object {},
+  "string.simple.all.two": Object {},
+  "string.simple.withOneParam": Object {},
+  "string.simple.withoutParam": Object {},
 }
 `;
 
@@ -60,6 +132,12 @@ exports[`src/format should format message with FR Locale 1`] = `
 Object {
   "language": Object {
     "locale": "fr",
+  },
+  "number.noExist": Object {
+    "exist": "",
+  },
+  "number.noExist.withOneParam": Object {
+    "test": "",
   },
   "number.withOneParam": Object {
     "test": "avec 1 paramètre",
@@ -109,5 +187,71 @@ Object {
   "simple.withoutParam": Object {
     "test": "aucun paramètre",
   },
+  "string.noExist": Object {
+    "noExist": "",
+  },
+  "string.path.noExist": Object {
+    "exist": "",
+  },
+  "string.simple": Object {
+    "withOneParam": "avec {one} paramètre",
+    "withTwoParam": "avec {one} {two} paramètre",
+    "withoutParam": "aucun paramètre",
+  },
+  "string.simple.all.one": Object {
+    "withOneParam": "avec ONE paramètre",
+    "withTwoParam": "avec {one} {two} paramètre",
+    "withoutParam": "aucun paramètre",
+  },
+  "string.simple.all.one.two": Object {
+    "withOneParam": "avec ONE paramètre",
+    "withTwoParam": "avec ONE TWO paramètre",
+    "withoutParam": "aucun paramètre",
+  },
+  "string.simple.all.two": Object {
+    "withOneParam": "avec {one} paramètre",
+    "withTwoParam": "avec ONE TWO paramètre",
+    "withoutParam": "aucun paramètre",
+  },
+  "string.simple.withOneParam": Object {
+    "withOneParam": "avec ONE paramètre",
+  },
+  "string.simple.withoutParam": Object {
+    "withoutParam": "aucun paramètre",
+  },
+}
+`;
+
+exports[`src/format should format message with FR Locale 2`] = `
+Object {
+  "language": Object {
+    "locale": "fr",
+  },
+  "number.noExist": Object {},
+  "number.noExist.withOneParam": Object {},
+  "number.withOneParam": Object {},
+  "number.withOneParam.thousand": Object {},
+  "number.withPercentParam": Object {},
+  "number.withUSDFormat": Object {},
+  "number.withoutParam": Object {},
+  "plural.simple.noparam": Object {},
+  "plural.simple.one": Object {},
+  "plural.simple.thousand": Object {},
+  "plural.simple.two": Object {},
+  "plural.simple.zero": Object {},
+  "select.gender.female": Object {},
+  "select.gender.male": Object {},
+  "select.gender.shemale": Object {},
+  "simple.withOneParam": Object {},
+  "simple.withTwoParam": Object {},
+  "simple.withoutParam": Object {},
+  "string.noExist": Object {},
+  "string.path.noExist": Object {},
+  "string.simple": Object {},
+  "string.simple.all.one": Object {},
+  "string.simple.all.one.two": Object {},
+  "string.simple.all.two": Object {},
+  "string.simple.withOneParam": Object {},
+  "string.simple.withoutParam": Object {},
 }
 `;

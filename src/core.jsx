@@ -38,8 +38,14 @@ export default config => WrappedComponent => class extends Component {
     const locale = getLocale(this.context)
     /* take locale on `config.formats` reducer */
     const formats = getFormats(this.context)
+
+    /* config can be a function, in which case we pass props to it */
+    let innerConfig = config
+    if (typeof config === 'function') innerConfig = config(this.props)
+
+    /* format messages */
     const messages = format(lang, locale, formats)(
-      config,
+      innerConfig,
       nextProps || this.props,
     )
     /* not change messages when the formated messages is identical */

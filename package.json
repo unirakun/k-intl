@@ -50,7 +50,7 @@
     "react-dom": "^16.2.0",
     "rollup": "^0.55.5",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-memory": "^3.0.0",
     "rollup-plugin-uglify": "^3.0.0",
     "serialize-javascript": "^1.4.0"

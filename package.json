@@ -52,7 +52,7 @@
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-memory": "^3.0.0",
-    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-uglify": "^4.0.0",
     "serialize-javascript": "^1.4.0"
   },
   "babel": {

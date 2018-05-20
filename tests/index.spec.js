@@ -5,6 +5,8 @@ import localDataFR from '../locale-data/fr'
 import en from './resources/en-GB'
 import fr from './resources/fr-FR'
 
+global.console = { warn: jest.fn() }
+
 const customFormats = {
   number: {
     usd: { style: 'currency', currency: 'USD' },
@@ -14,6 +16,9 @@ const customFormats = {
 const keyValueResources = (lang, f) => ({
   language: formatter('', lang).resolvedOptions(),
   'simple.withoutParam': f({ test: 'simple.withoutParam' }),
+  'simple.withOneParam.noParams': f({ test: 'simple.withOneParam' }, { test: {} }),
+  'simple.withOneParam.noParams2': f({ test: 'simple.withOneParam' }),
+  'simple.withOneParam.noParams3': f({ test: 'simple.withOneParam' }, { test: { two: 'TWO' } }),
   'simple.withOneParam': f({ test: 'simple.withOneParam' }, { test: { one: 'ONE' } }),
   'simple.withTwoParam': f({ test: 'simple.withTwoParam' }, { test: { one: 'ONE', two: 'TWO' } }),
   'plural.simple.noparam': f({ test: 'plural.simple' }),
@@ -51,4 +56,7 @@ describe('src/format', () => {
   addLocaleData(localDataFR)
   tester('EN', en)
   tester('FR', fr)
+  it('should log warning when formatting params are not present', () => {
+    expect(console.warn).toHaveBeenCalledTimes(4) // eslint-disable-line no-console
+  })
 })

@@ -13,7 +13,11 @@ export const formatter = (...args) => new IntlMessageFormat(...args)
 
 const formatMessage = (params, message = '', ...args) => {
   if (params) {
-    return formatter(message, ...args).format(params)
+    try {
+      return formatter(message, ...args).format(params)
+    } catch (e) {
+      console.warn('/ HOC k-intl /', e.message) // eslint-disable-line no-console
+    }
   }
   return message
 }

@@ -53,6 +53,15 @@ Object {
   "simple.withOneParam": Object {
     "test": "with ONE parameter",
   },
+  "simple.withOneParam.noParams": Object {
+    "test": "with {one} parameter",
+  },
+  "simple.withOneParam.noParams2": Object {
+    "test": "with {one} parameter",
+  },
+  "simple.withOneParam.noParams3": Object {
+    "test": "with {one} parameter",
+  },
   "simple.withTwoParam": Object {
     "test": "with ONE TWO parameter",
   },
@@ -115,6 +124,9 @@ Object {
   "select.gender.male": Object {},
   "select.gender.shemale": Object {},
   "simple.withOneParam": Object {},
+  "simple.withOneParam.noParams": Object {},
+  "simple.withOneParam.noParams2": Object {},
+  "simple.withOneParam.noParams3": Object {},
   "simple.withTwoParam": Object {},
   "simple.withoutParam": Object {},
   "string.noExist": Object {},
@@ -181,6 +193,15 @@ Object {
   "simple.withOneParam": Object {
     "test": "avec ONE paramètre",
   },
+  "simple.withOneParam.noParams": Object {
+    "test": "avec {one} paramètre",
+  },
+  "simple.withOneParam.noParams2": Object {
+    "test": "avec {one} paramètre",
+  },
+  "simple.withOneParam.noParams3": Object {
+    "test": "avec {one} paramètre",
+  },
   "simple.withTwoParam": Object {
     "test": "avec ONE TWO paramètre",
   },
@@ -243,6 +264,9 @@ Object {
   "select.gender.male": Object {},
   "select.gender.shemale": Object {},
   "simple.withOneParam": Object {},
+  "simple.withOneParam.noParams": Object {},
+  "simple.withOneParam.noParams2": Object {},
+  "simple.withOneParam.noParams3": Object {},
   "simple.withTwoParam": Object {},
   "simple.withoutParam": Object {},
   "string.noExist": Object {},

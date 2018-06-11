@@ -14,7 +14,6 @@ export default {
     format: process.env.FORMAT || 'umd',
     sourcemap: path.resolve(pkg.main),
     globals: {
-      lodash: '_',
       react: 'React',
       'fbjs/lib/shallowEqual': 'shallowEqual',
       'intl-messageformat': 'IntlMessageFormat',
@@ -31,7 +30,6 @@ export default {
   ],
   external: [
     'redux',
-    'lodash',
     'react',
     'fbjs/lib/shallowEqual',
     'intl-messageformat',

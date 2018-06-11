@@ -161,7 +161,7 @@ Object {
     "test": "avec 50% paramètre",
   },
   "number.withUSDFormat": Object {
-    "test": "avec US$ 1,234.00 paramètre",
+    "test": "avec $1,234.00 paramètre",
   },
   "number.withoutParam": Object {
     "test": "aucun paramètre",

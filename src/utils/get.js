@@ -1,12 +1,7 @@
-const get = (object, path, defaultVal) => {
-  if (!object) return defaultVal
+const get = (data, path) =>
+  path.split('.').reduce(
+    (curr, sub) => curr && curr[sub],
+    data,
+  )
 
-  const innerPath = Array.isArray(path)
-    ? path
-    : path.split('.').filter(i => i.length)
-  if (!innerPath.length) return object
-
-  return get(object[innerPath.shift()], innerPath, defaultVal)
-}
-
-export default get
+export default (data, path) => (typeof path === 'string' ? get(data, path) : data)

@@ -46,7 +46,7 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "rollup": "^0.55.5",
+    "rollup": "^0.56.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-memory": "^3.0.0",

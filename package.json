@@ -1,6 +1,6 @@
 {
   "name": "k-intl",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "index.js",
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",

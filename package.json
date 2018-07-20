@@ -1,7 +1,7 @@
 {
   "name": "k-intl",
   "description": "React HOC to provide internationalization",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "main": "index.js",
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",

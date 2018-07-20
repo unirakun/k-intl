@@ -1,6 +1,6 @@
 # k-intl
 
-HOC to provide internationalization.
+React HOC to provide internationalization.
 This HOC use `intl-messageformat` to format your text. (see full [documentation](https://github.com/yahoo/intl-messageformat))
 
 [![CircleCI](https://circleci.com/gh/alakarteio/k-intl.svg?style=shield)](https://circleci.com/gh/alakarteio/k-intl) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-intl/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-intl?branch=master) [![NPM Version](https://badge.fury.io/js/k-intl.svg)](https://www.npmjs.com/package/k-intl)
@@ -10,7 +10,7 @@ This HOC use `intl-messageformat` to format your text. (see full [documentation]
  - `yarn add k-intl`
  - `npm install --save k-intl`
 
-## How use me ?
+## How to use me ?
 
 ### Load locale on your store whith this path : `store.config.locale`
 ```json

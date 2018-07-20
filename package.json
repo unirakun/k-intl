@@ -1,5 +1,6 @@
 {
   "name": "k-intl",
+  "description": "HOC to provide internationalization",
   "version": "0.5.3",
   "main": "index.js",
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",

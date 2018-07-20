@@ -15,6 +15,7 @@
     "ci": "npm-run-all --parallel lint coveralls"
   },
   "dependencies": {
+    "fbjs": "^0.8.17",
     "intl-messageformat": "^2.2.0",
     "react-intl": "^2.4.0"
   },
@@ -92,7 +93,9 @@
       }
     }
   },
-  "eslintIgnore": ["src/en.js"],
+  "eslintIgnore": [
+    "src/en.js"
+  ],
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": [
@@ -117,6 +120,8 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./misc/test-setup.js",
-    "coveragePathIgnorePatterns": ["<rootDir>/src/en.js"]
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/en.js"
+    ]
   }
 }

@@ -42,17 +42,16 @@ const getSubPaths = (locale, paths, config) => {
 }
 
 export default
-(lang = browserLanguage, locale, customFormats) =>
-  (config = {}, componentProps = []) => {
-    // in case of locale is not initialized
-    if (!locale) return {}
+(lang = browserLanguage, locale, customFormats) => (config = {}, componentProps = []) => {
+  // in case of locale is not initialized
+  if (!locale) return {}
 
-    let paths = config
-    if (typeof paths === 'string') paths = getSubPaths(locale, paths, config)
-    return Object
-      .keys(paths)
-      .reduce((acc, curr) => {
-        const message = get(locale, paths[curr])
-        return { ...acc, [curr]: formatMessage(componentProps[curr], message, lang, customFormats) }
-      }, defaultMessages)
-  }
+  let paths = config
+  if (typeof paths === 'string') paths = getSubPaths(locale, paths, config)
+  return Object
+    .keys(paths)
+    .reduce((acc, curr) => {
+      const message = get(locale, paths[curr])
+      return { ...acc, [curr]: formatMessage(componentProps[curr], message, lang, customFormats) }
+    }, defaultMessages)
+}

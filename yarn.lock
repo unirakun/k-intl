@@ -1180,17 +1180,17 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-cldr-core@^31.0.1:
-  version "31.0.1"
-  resolved "https://registry.yarnpkg.com/cldr-core/-/cldr-core-31.0.1.tgz#24b3d59359ef890595665e5a8ca29e53901c6d54"
+cldr-core@^33.0.0:
+  version "33.0.0"
+  resolved "https://registry.yarnpkg.com/cldr-core/-/cldr-core-33.0.0.tgz#200f32e7c09dd7adbe16b0cf6ee8f75e2ca4b194"
 
-cldr-dates-full@^31.0.1:
-  version "31.0.1"
-  resolved "https://registry.yarnpkg.com/cldr-dates-full/-/cldr-dates-full-31.0.1.tgz#c49a4740250646148cfb55e02f20d7ae2c917f89"
+cldr-dates-full@^33.0.0:
+  version "33.0.0"
+  resolved "https://registry.yarnpkg.com/cldr-dates-full/-/cldr-dates-full-33.0.0.tgz#c1746e447c75096499e06988bf66205dad20aa8e"
 
-cldr-numbers-full@^31.0.1:
-  version "31.0.1"
-  resolved "https://registry.yarnpkg.com/cldr-numbers-full/-/cldr-numbers-full-31.0.1.tgz#a78774e1544fbf9616d8f6812a312b10f4aaafbe"
+cldr-numbers-full@^33.0.0:
+  version "33.0.0"
+  resolved "https://registry.yarnpkg.com/cldr-numbers-full/-/cldr-numbers-full-33.0.0.tgz#6dc62f4e5646169e5607b076035ecb2501a22e3f"
 
 cli-cursor@^2.1.0:
   version "2.1.0"
@@ -2084,13 +2084,13 @@ form-data@~2.3.1:
     combined-stream "1.0.6"
     mime-types "^2.1.12"
 
-formatjs-extract-cldr-data@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/formatjs-extract-cldr-data/-/formatjs-extract-cldr-data-4.1.0.tgz#0ebcb3b36a1f829aa50a700c4e29a2b6a5903cf5"
+formatjs-extract-cldr-data@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/formatjs-extract-cldr-data/-/formatjs-extract-cldr-data-5.0.0.tgz#6c2b5ffe79ff919ec151779c2ec9145641783c3d"
   dependencies:
-    cldr-core "^31.0.1"
-    cldr-dates-full "^31.0.1"
-    cldr-numbers-full "^31.0.1"
+    cldr-core "^33.0.0"
+    cldr-dates-full "^33.0.0"
+    cldr-numbers-full "^33.0.0"
     glob "^5.0.1"
     make-plural "^2.1.3"
     object.assign "^4.0.3"

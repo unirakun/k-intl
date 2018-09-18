@@ -16,7 +16,7 @@
     "ci": "npm-run-all --parallel lint coveralls"
   },
   "dependencies": {
-    "fbjs": "^0.8.17",
+    "fbjs": "^1.0.0",
     "intl-messageformat": "^2.2.0",
     "react-intl": "^2.4.0"
   },

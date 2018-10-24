@@ -1,7 +1,7 @@
 # k-intl
 
 React HOC to provide internationalization.
-This HOC use `intl-messageformat` to format your text. (see full [documentation](https://github.com/yahoo/intl-messageformat))
+This HOC uses `intl-messageformat` to format your text. (see full [documentation](https://github.com/yahoo/intl-messageformat))
 
 [![CircleCI](https://circleci.com/gh/alakarteio/k-intl.svg?style=shield)](https://circleci.com/gh/alakarteio/k-intl) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-intl/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-intl?branch=master) [![NPM Version](https://badge.fury.io/js/k-intl.svg)](https://www.npmjs.com/package/k-intl)
 [![Size](http://img.badgesize.io/alakarteio/k-intl/master/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-intl.svg)](https://greenkeeper.io/)
@@ -10,19 +10,19 @@ This HOC use `intl-messageformat` to format your text. (see full [documentation]
  - `yarn add k-intl`
  - `npm install --save k-intl`
 
-## How to use me ?
+## How to use me?
 
-### Load locale on your store whith this path : `store.config.locale`
+### Load locale on your store with this path: `store.config.locale`
 ```json
 /* en.json */
 {
   "meeseeks": {
-    "sayHello": "I'm Mr. Meeseeks !"
+    "sayHello": "I'm Mr. Meeseeks!"
   }
 }
 ```
 
-### Wrap your component with container like that :
+### Wrap your component with container
 ```js
 /* meeseeks.container.js */
 
@@ -42,7 +42,7 @@ export default ({ messages }) => <div>{messages.sayHello}</div>
 # About ![alakarteio](http://alakarte.io/assets/img/logo.markdown.png)
 **alakarteio** is created by two passionate french developers.
 
-Do you want to contact them ? Go to their [website](http://alakarte.io)
+Do you want to contact them? Go to their [website](http://alakarte.io)
 
 <table border="0">
  <tr>

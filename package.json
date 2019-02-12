@@ -123,7 +123,9 @@
     }
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./misc/test-setup.js",
+    "setupFilesAfterEnv": [
+      "./misc/test-setup.js"
+    ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/en.js"
     ]

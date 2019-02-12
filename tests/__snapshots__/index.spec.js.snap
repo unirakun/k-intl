@@ -155,13 +155,13 @@ Object {
     "test": "avec 1 paramètre",
   },
   "number.withOneParam.thousand": Object {
-    "test": "avec 1,000 paramètre",
+    "test": "avec 1 000 paramètre",
   },
   "number.withPercentParam": Object {
-    "test": "avec 50% paramètre",
+    "test": "avec 50 % paramètre",
   },
   "number.withUSDFormat": Object {
-    "test": "avec $1,234.00 paramètre",
+    "test": "avec 1 234,00 $US paramètre",
   },
   "number.withoutParam": Object {
     "test": "aucun paramètre",
@@ -173,7 +173,7 @@ Object {
     "test": "vous avez one paramètre.",
   },
   "plural.simple.thousand": Object {
-    "test": "vous avez 1,000 paramètres.",
+    "test": "vous avez 1 000 paramètres.",
   },
   "plural.simple.two": Object {
     "test": "vous avez 2 paramètres.",

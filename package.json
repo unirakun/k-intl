@@ -6,7 +6,7 @@
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:data": "babel-node scripts/build-data",
+    "build:data": "babel-node --presets=@babel/preset-env  scripts/build-data",
     "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
     "build": "npm-run-all build:*",
     "lint:js": "eslint --ext js,jsx src",
@@ -16,80 +16,81 @@
     "ci": "npm-run-all --parallel lint coveralls"
   },
   "dependencies": {
-    "fbjs": "^0.8.17",
-    "intl-messageformat": "^2.2.0",
-    "react-intl": "^2.4.0"
+    "fbjs": "^1.0.0",
+    "intl-messageformat": "^2.2.0"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^16.8.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "coveralls": "^3.0.0",
-    "cross-env": "^5.1.3",
-    "enzyme": "^3.3.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^5.0.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
-    "formatjs-extract-cldr-data": "^4.1.0",
-    "jest": "^22.1.3",
-    "npm-run-all": "^4.1.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "rollup": "^0.63.2",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^9.1.3",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "formatjs-extract-cldr-data": "^6.0.0",
+    "jest": "^24.1.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-memory": "^3.0.0",
-    "rollup-plugin-uglify": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "serialize-javascript": "^1.4.0"
   },
   "babel": {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "modules": false
         }
       ]
     ],
     "plugins": [
-      "transform-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread"
     ],
     "env": {
       "build": {
         "plugins": [
-          "external-helpers",
-          "transform-class-properties",
-          "transform-react-jsx",
-          "transform-object-rest-spread"
+          "@babel/plugin-external-helpers",
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-transform-react-jsx",
+          "@babel/plugin-proposal-object-rest-spread"
         ]
       },
       "test": {
         "presets": [
           [
-            "env",
+            "@babel/preset-env",
             {
               "modules": false
             }
           ]
         ],
         "plugins": [
-          "transform-es2015-modules-commonjs",
-          "transform-object-rest-spread",
-          "transform-react-jsx",
-          "transform-class-properties"
+          "@babel/plugin-transform-modules-commonjs",
+          "@babel/plugin-proposal-object-rest-spread",
+          "@babel/plugin-transform-react-jsx",
+          "@babel/plugin-proposal-class-properties"
         ]
       }
     }

@@ -5,7 +5,7 @@ import extractCLDRData from 'formatjs-extract-cldr-data'
 import serialize from 'serialize-javascript'
 import { rollup } from 'rollup'
 import memory from 'rollup-plugin-memory'
-import uglify from 'rollup-plugin-uglify'
+import { uglify } from 'rollup-plugin-uglify'
 
 const DEFAULT_LOCALE = 'en'
 const DEFAULT_MAP = new Map()
@@ -24,15 +24,13 @@ const cldrDataByLang = [...cldrDataByLocale].reduce((map, [locale, data]) => {
   return map.set(lang, langData.concat(data))
 }, DEFAULT_MAP)
 
-const createDataModule = localeData =>
-  `
+const createDataModule = localeData => `
 // GENERATED FILE
 export default ${serialize(localeData)};
   `
 
 const writeUMDFile = (filename, module) => {
   const lang = p.basename(filename, '.js')
-
   return rollup({
     input: filename,
     plugins: [
@@ -51,17 +49,16 @@ const writeUMDFile = (filename, module) => {
     .then(() => filename)
 }
 
-const writeFile = (filename, contents) =>
-  new Promise((resolve, reject) => {
-    fs.writeFile(
-      filename,
-      contents,
-      (err) => {
-        if (err) reject(err)
-        else resolve(p.resolve(filename))
-      },
-    )
-  });
+const writeFile = (filename, contents) => new Promise((resolve, reject) => {
+  fs.writeFile(
+    filename,
+    contents,
+    (err) => {
+      if (err) reject(err)
+      else resolve(p.resolve(filename))
+    },
+  )
+})
 
 // -----------------------------------------------------------------------------
 const run = () => {
@@ -80,6 +77,7 @@ const run = () => {
   })
 
   process.on('unhandledRejection', (reason) => { throw reason })
+  // eslint-disable-next-line no-console
   console.log(`Writing locale data files to ${directoryData}...`)
 }
 

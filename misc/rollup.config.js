@@ -9,6 +9,7 @@ const pkg = JSON.parse(fs.readFileSync('./package.json'))
 export default {
   input: pkg['jsnext:main'] || 'src/index.js',
   output: {
+    exports: 'named',
     name: pkg.amdName || pkg.name,
     file: pkg.main,
     format: process.env.FORMAT || 'umd',
@@ -21,7 +22,7 @@ export default {
     },
   },
   plugins: [
-    babel(),
+    babel({ externalHelpers: true }),
     commonjs({
       include: 'node_modules/**',
       extensions: ['.js', '.jsx'],

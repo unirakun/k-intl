@@ -118,13 +118,13 @@ Object {
     "test": "avec 1 paramètre",
   },
   "number.withOneParam.thousand": Object {
-    "test": "avec 1 000 paramètre",
+    "test": "avec 1000 paramètre",
   },
   "number.withPercentParam": Object {
-    "test": "avec 50 % paramètre",
+    "test": "avec 0.5 paramètre",
   },
   "number.withUSDFormat": Object {
-    "test": "avec 1 234 paramètre",
+    "test": "avec 1234 paramètre",
   },
   "number.withoutParam": Object {
     "test": "aucun paramètre",

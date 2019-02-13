@@ -9,9 +9,9 @@ export default {
   },
   number: {
     withoutParam: 'aucun paramètre',
-    withOneParam: 'avec {one, number} paramètre',
-    withPercentParam: 'avec {one, number, percent} paramètre',
-    withUSDFormat: 'avec {one, number, usd} paramètre',
+    withOneParam: 'avec {one} paramètre',
+    withPercentParam: 'avec {one} paramètre',
+    withUSDFormat: 'avec {one} paramètre',
   },
   select: {
     gender: '{ gender, select, male {Il} female {Elle} other {ça} } répondra sous peu.',

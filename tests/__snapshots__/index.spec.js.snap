@@ -105,54 +105,6 @@ Object {
 
 exports[`src/format should format message with FR Locale 1`] = `
 Object {
-  "language": Object {
-    "locale": "fr",
-  },
-  "number.noExist": Object {
-    "exist": "",
-  },
-  "number.noExist.withOneParam": Object {
-    "test": "",
-  },
-  "number.withOneParam": Object {
-    "test": "avec 1 paramètre",
-  },
-  "number.withOneParam.thousand": Object {
-    "test": "avec 1000 paramètre",
-  },
-  "number.withPercentParam": Object {
-    "test": "avec 0.5 paramètre",
-  },
-  "number.withUSDFormat": Object {
-    "test": "avec 1234 paramètre",
-  },
-  "number.withoutParam": Object {
-    "test": "aucun paramètre",
-  },
-  "plural.simple.noparam": Object {
-    "test": "vous avez {param, plural, =0 {aucun paramètre.} =1 {one paramètre.} other {# paramètres.}}",
-  },
-  "plural.simple.one": Object {
-    "test": "vous avez one paramètre.",
-  },
-  "plural.simple.thousand": Object {
-    "test": "vous avez 1 000 paramètres.",
-  },
-  "plural.simple.two": Object {
-    "test": "vous avez 2 paramètres.",
-  },
-  "plural.simple.zero": Object {
-    "test": "vous avez aucun paramètre.",
-  },
-  "select.gender.female": Object {
-    "test": "Elle répondra sous peu.",
-  },
-  "select.gender.male": Object {
-    "test": "Il répondra sous peu.",
-  },
-  "select.gender.shemale": Object {
-    "test": "ça répondra sous peu.",
-  },
   "simple.withOneParam": Object {
     "test": "avec ONE paramètre",
   },
@@ -170,38 +122,6 @@ Object {
   },
   "simple.withoutParam": Object {
     "test": "aucun paramètre",
-  },
-  "string.noExist": Object {
-    "noExist": "",
-  },
-  "string.path.noExist": Object {
-    "exist": "",
-  },
-  "string.simple": Object {
-    "withOneParam": "avec {one} paramètre",
-    "withTwoParam": "avec {one} {two} paramètre",
-    "withoutParam": "aucun paramètre",
-  },
-  "string.simple.all.one": Object {
-    "withOneParam": "avec ONE paramètre",
-    "withTwoParam": "avec {one} {two} paramètre",
-    "withoutParam": "aucun paramètre",
-  },
-  "string.simple.all.one.two": Object {
-    "withOneParam": "avec ONE paramètre",
-    "withTwoParam": "avec ONE TWO paramètre",
-    "withoutParam": "aucun paramètre",
-  },
-  "string.simple.all.two": Object {
-    "withOneParam": "avec {one} paramètre",
-    "withTwoParam": "avec ONE TWO paramètre",
-    "withoutParam": "aucun paramètre",
-  },
-  "string.simple.withOneParam": Object {
-    "withOneParam": "avec ONE paramètre",
-  },
-  "string.simple.withoutParam": Object {
-    "withoutParam": "aucun paramètre",
   },
 }
 `;

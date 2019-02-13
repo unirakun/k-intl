@@ -46,16 +46,17 @@ const keyValueResources = (lang, f) => ({
   'number.noExist.withOneParam': f({ test: 'number.noExist' }, { test: { one: 1 } }),
 })
 
-const tester = (lang, locale) =>
-  it(`should format message with ${lang} Locale`, () => {
-    expect(keyValueResources(lang, format(lang, locale, customFormats))).toMatchSnapshot()
-    expect(keyValueResources(lang, format(lang, undefined))).toMatchSnapshot()
-  })
-
 describe('src/format', () => {
   addLocaleData(localDataFR)
-  tester('EN', en)
-  tester('FR', fr)
+
+  it('should format message with EN Locale', () => {
+    expect(keyValueResources('EN', format('EN', en, customFormats))).toMatchSnapshot()
+  })
+
+  it('should format message with FR Locale', () => {
+    expect(keyValueResources('FR', format('FR', fr))).toMatchSnapshot()
+  })
+
   it('should log warning when formatting params are not present', () => {
     expect(console.warn).toHaveBeenCalledTimes(4) // eslint-disable-line no-console
   })

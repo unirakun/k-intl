@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { formatter } from '../src'
+import formatter from '../src/formatter'
 import en from './resources/en-GB'
 import fr from './resources/fr-FR'
 

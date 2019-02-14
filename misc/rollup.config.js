@@ -18,11 +18,12 @@ export default {
       react: 'React',
       'fbjs/lib/shallowEqual': 'shallowEqual',
       'intl-messageformat': 'IntlMessageFormat',
-      'k-intl/locale-data/en': 'defaultLocaleData',
     },
   },
   plugins: [
-    babel({ externalHelpers: true }),
+    babel({
+      exclude: 'node_modules/**',
+    }),
     commonjs({
       include: 'node_modules/**',
       extensions: ['.js', '.jsx'],
@@ -34,6 +35,5 @@ export default {
     'react',
     'fbjs/lib/shallowEqual',
     'intl-messageformat',
-    'k-intl/locale-data/en',
   ],
 }

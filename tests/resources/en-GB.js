@@ -16,4 +16,9 @@ export default {
   select: {
     gender: '{ gender, select, male {He} female {She} other {They} } will respond shortly.',
   },
+  depth: {
+    depth1: 'DEPTH 1, {value1}',
+    depth2: 'DEPTH 2, {value2}',
+    depth3: 'DEPTH 3, {value3}',
+  },
 }

@@ -6,9 +6,7 @@
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:data": "babel-node --presets=@babel/preset-env  scripts/build-data",
-    "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
-    "build": "npm-run-all build:*",
+    "build": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
     "lint:js": "eslint --ext js,jsx src",
     "lint": "npm-run-all --parallel lint:*",
     "test": "cross-env jest",
@@ -26,7 +24,6 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
-    "@babel/plugin-external-helpers": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
@@ -71,7 +68,6 @@
     "env": {
       "build": {
         "plugins": [
-          "@babel/plugin-external-helpers",
           "@babel/plugin-proposal-class-properties",
           "@babel/plugin-transform-react-jsx",
           "@babel/plugin-proposal-object-rest-spread"

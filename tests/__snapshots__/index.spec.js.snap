@@ -2,8 +2,10 @@
 
 exports[`src/format should format message with EN Locale 1`] = `
 Object {
-  "language": Object {
-    "locale": "en",
+  "depth": Object {
+    "depth1": "DEPTH 1, VALUE1",
+    "depth2": "DEPTH 2, VALUE2",
+    "depth3": "DEPTH 3, VALUE3",
   },
   "number.noExist": Object {
     "exist": "",

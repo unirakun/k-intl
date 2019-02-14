@@ -1,14 +1,19 @@
-const getConfig = (field, mandatory = true) => (context) => {
-  const config = context.store
-    && context.store.getState()
-    && context.store.getState().config
+const defaultState = state => state.config
 
-  if ((!config || !config[field]) && mandatory) {
+const factoryConfig = (getState = defaultState) => context => (field, mandatory = true) => {
+  const state = getState(context.store.getState())
+
+  if ((!state || !state[field]) && mandatory) {
     throw new Error(`/HOC k-intl/ ${field} is not readable. Make sure that this one is available at config.${field} on your redux store`)
   }
-  return config[field]
+  return state[field]
 }
 
-export const getLocale = getConfig('locale')
-export const getLang = getConfig('lang')
-export const getFormats = getConfig('formats', false)
+export default getState => (context) => {
+  const getConfig = factoryConfig(getState)(context)
+  return {
+    locale: getConfig('locale'),
+    lang: getConfig('lang'),
+    formats: getConfig('formats', false),
+  }
+}

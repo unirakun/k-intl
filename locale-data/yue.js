@@ -1,1 +1,0 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):((e=e||self)["k-intl"]=e["k-intl"]||{},e["k-intl"].yue=n())}(this,function(){"use strict";return[{locale:"yue",pluralRuleFunction:function(e,n){return"other"}},{locale:"yue-Hans",pluralRuleFunction:function(e,n){return"other"}}]});

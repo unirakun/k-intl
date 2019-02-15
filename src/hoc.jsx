@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import shallowEqual from 'fbjs/lib/shallowEqual'
-import { wrapDisplayName, getLocale, getLang, getFormats } from './utils'
-import format from './format'
+import { wrapDisplayName, getConfigs } from './utils'
+import formatter from './formatter'
 
-export default config => WrappedComponent => class extends Component {
+export default (path, getState) => WrappedComponent => class extends Component {
   static displayName = wrapDisplayName(WrappedComponent, 'Intl')
 
   static contextTypes = {
@@ -32,20 +32,16 @@ export default config => WrappedComponent => class extends Component {
   }
 
   inject = (nextProps) => {
-    /* take locale on `config.lang` reducer */
-    const lang = getLang(this.context)
-    /* take locale on `config.locale` reducer */
-    const locale = getLocale(this.context)
-    /* take locale on `config.formats` reducer */
-    const formats = getFormats(this.context)
+    /* take lang, locale and formats on `store` reducer */
+    const { lang, locale, formats } = getConfigs(getState)(this.context)
 
-    /* config can be a function, in which case we pass props to it */
-    let innerConfig = config
-    if (typeof config === 'function') innerConfig = config(nextProps || this.props)
+    /* path can be a function, in which case we pass props to it */
+    let innerPath = path
+    if (typeof path === 'function') innerPath = path(nextProps || this.props)
 
     /* format messages */
-    const messages = format(lang, locale, formats)(
-      innerConfig,
+    const messages = formatter(lang, locale, formats)(
+      innerPath,
       nextProps || this.props,
     )
     /* not change messages when the formated messages is identical */

@@ -1,1 +1,0 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):((e=e||self)["k-intl"]=e["k-intl"]||{},e["k-intl"].nus=n())}(this,function(){"use strict";return[{locale:"nus",pluralRuleFunction:function(e,n){return"other"}}]});

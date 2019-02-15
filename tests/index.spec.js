@@ -1,7 +1,5 @@
 /* eslint-env jest */
-import format, { formatter } from '../src/format'
-import { addLocaleData } from '../src/utils'
-import localDataFR from '../locale-data/fr'
+import formatter from '../src/formatter'
 import en from './resources/en-GB'
 import fr from './resources/fr-FR'
 
@@ -13,7 +11,7 @@ const customFormats = {
   },
 }
 
-const ressourceEN_FR = f => ({
+const ressourceWithoutParam = f => ({
   'simple.withoutParam': f({ test: 'simple.withoutParam' }),
   'simple.withOneParam.noParams': f({ test: 'simple.withOneParam' }, { test: {} }),
   'simple.withOneParam.noParams2': f({ test: 'simple.withOneParam' }),
@@ -23,8 +21,7 @@ const ressourceEN_FR = f => ({
 })
 
 const keyValueResources = (lang, f) => ({
-  language: formatter('', lang).resolvedOptions(),
-  ...ressourceEN_FR(f),
+  ...ressourceWithoutParam(f),
   'plural.simple.noparam': f({ test: 'plural.simple' }),
   'plural.simple.zero': f({ test: 'plural.simple' }, { test: { param: 0 } }),
   'plural.simple.one': f({ test: 'plural.simple' }, { test: { param: 1 } }),
@@ -48,20 +45,26 @@ const keyValueResources = (lang, f) => ({
   'string.path.noExist': f('no.exist'),
   'number.noExist': f('number.exist'),
   'number.noExist.withOneParam': f({ test: 'number.noExist' }, { test: { one: 1 } }),
+  depth: f(
+    {
+      depth1: 'depth.depth1',
+      depth2: 'depth.depth2',
+      depth3: 'depth.depth3',
+    },
+    {
+      depth1: { value1: 'VALUE1' },
+      depth2: { value2: 'VALUE2' },
+      depth3: { value3: 'VALUE3' },
+    },
+  ),
 })
 
 describe('src/format', () => {
-  addLocaleData(localDataFR)
-
   it('should format message with EN Locale', () => {
-    expect(keyValueResources('EN', format('EN', en, customFormats))).toMatchSnapshot()
+    expect(keyValueResources('EN', formatter('EN', en, customFormats))).toMatchSnapshot()
   })
 
   it('should format message with FR Locale', () => {
-    expect(ressourceEN_FR(format('FR', fr))).toMatchSnapshot()
-  })
-
-  it('should log warning when formatting params are not present', () => {
-    expect(console.warn).toHaveBeenCalledTimes(4) // eslint-disable-line no-console
+    expect(ressourceWithoutParam(formatter('FR', fr))).toMatchSnapshot()
   })
 })

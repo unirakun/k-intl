@@ -1,2 +1,1 @@
-export { default } from './core'
-export { addLocaleData } from './utils'
+export { default } from './hoc'

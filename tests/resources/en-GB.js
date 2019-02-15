@@ -1,5 +1,7 @@
 export default {
   simple: {
+    zero: 0,
+    one: 1,
     withoutParam: 'no parameter',
     withOneParam: 'with {one} parameter',
     withTwoParam: 'with {one} {two} parameter',

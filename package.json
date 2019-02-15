@@ -1,7 +1,7 @@
 {
   "name": "k-intl",
   "description": "React HOC to provide internationalization",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "index.js",
   "author": "Guillaume CRESPEL <guillaume.crespel@gmail.com>",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "intl-messageformat": "^2.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.1"
+    "react": "^16.8.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

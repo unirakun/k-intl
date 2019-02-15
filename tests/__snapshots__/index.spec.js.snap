@@ -77,24 +77,32 @@ Object {
     "exist": "",
   },
   "string.simple": Object {
+    "one": 1,
     "withOneParam": "with {one} parameter",
     "withTwoParam": "with {one} {two} parameter",
     "withoutParam": "no parameter",
+    "zero": 0,
   },
   "string.simple.all.one": Object {
+    "one": 1,
     "withOneParam": "with ONE parameter",
     "withTwoParam": "with {one} {two} parameter",
     "withoutParam": "no parameter",
+    "zero": 0,
   },
   "string.simple.all.one.two": Object {
+    "one": 1,
     "withOneParam": "with ONE parameter",
     "withTwoParam": "with ONE TWO parameter",
     "withoutParam": "no parameter",
+    "zero": 0,
   },
   "string.simple.all.two": Object {
+    "one": 1,
     "withOneParam": "with {one} parameter",
     "withTwoParam": "with ONE TWO parameter",
     "withoutParam": "no parameter",
+    "zero": 0,
   },
   "string.simple.withOneParam": Object {
     "withOneParam": "with ONE parameter",

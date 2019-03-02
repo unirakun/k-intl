@@ -41,6 +41,7 @@ const keyValueResources = (lang, f) => ({
   'string.simple.all.one': f('simple', { withOneParam: { one: 'ONE' } }),
   'string.simple.all.two': f('simple', { withTwoParam: { one: 'ONE', two: 'TWO' } }),
   'string.simple.all.one.two': f('simple', { withTwoParam: { one: 'ONE', two: 'TWO' }, withOneParam: { one: 'ONE' } }),
+  'string.simple.all.one.two.level': f('simple', { one: 'ONE_1', two: 'TWO_1', withTwoParam: { one: 'ONE_2', two: 'TWO_2' } }),
   'string.noExist': f('noExist'),
   'string.path.noExist': f('no.exist'),
   'number.noExist': f('number.exist'),

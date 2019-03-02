@@ -97,6 +97,13 @@ Object {
     "withoutParam": "no parameter",
     "zero": 0,
   },
+  "string.simple.all.one.two.level": Object {
+    "one": 1,
+    "withOneParam": "with ONE_1 parameter",
+    "withTwoParam": "with ONE_2 TWO_2 parameter",
+    "withoutParam": "no parameter",
+    "zero": 0,
+  },
   "string.simple.all.two": Object {
     "one": 1,
     "withOneParam": "with {one} parameter",

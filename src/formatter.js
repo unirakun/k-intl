@@ -25,6 +25,8 @@ export default (lang = browserLanguage, locale, formats) => (rootPath = '', valu
     .keys(paths)
     .reduce((acc, curr) => {
       const message = get(locale, paths[curr])
-      return { ...acc, [curr]: formatMessage(message, lang, formats)(values[curr]) }
+      return {
+        ...acc,
+        [curr]: formatMessage(message, lang, formats)({ ...values, ...values[curr] }) }
     }, {})
 }

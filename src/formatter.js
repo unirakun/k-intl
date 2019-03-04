@@ -15,7 +15,7 @@ const formatMessage = (message = '', ...args) => (values) => {
 
 const browserLanguage = window.navigator.language || window.navigator.browserLanguage
 
-export default (lang = browserLanguage, locale, formats) => (rootPath = '', values = {}) => {
+export default (lang = browserLanguage, locale, formats) => (rootPath = '', values) => {
   // in case of locale is not initialized
   if (!locale) return {}
 
@@ -27,6 +27,6 @@ export default (lang = browserLanguage, locale, formats) => (rootPath = '', valu
       const message = get(locale, paths[curr])
       return {
         ...acc,
-        [curr]: formatMessage(message, lang, formats)({ ...values, ...values[curr] }) }
+        [curr]: formatMessage(message, lang, formats)(values && { ...values, ...values[curr] }) }
     }, {})
 }

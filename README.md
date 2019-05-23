@@ -39,10 +39,10 @@ export default intl('meeseeks')(Component)
 export default ({ messages }) => <div>{messages.sayHello}</div>
 ```
 
-# About ![alakarteio](http://alakarte.io/assets/img/logo.markdown.png)
-**alakarteio** is created by two passionate french developers.
+# About ![rakun](https://rakun.team/assets/img/logo.markdown.png)
+**rakun** is created by two passionate french developers.
 
-Do you want to contact them? Go to their [website](http://alakarte.io)
+Do you want to contact them? Go to their [website](https://rakun.team)
 
 <table border="0">
  <tr>

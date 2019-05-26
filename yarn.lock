@@ -2726,15 +2726,25 @@ inquirer@^6.1.0:
     strip-ansi "^5.0.0"
     through "^2.3.6"
 
-intl-messageformat-parser@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-1.4.0.tgz#b43d45a97468cadbe44331d74bb1e8dea44fc075"
+intl-messageformat-parser@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-1.6.2.tgz#99e2e60c6990d2bcebbff6fb374e1aa995c89a2b"
+  integrity sha512-Qwxn9zI3D6AxVn7Wqx9ntYrw+i/cp84UdTXlBvOfZqBUSWR9VAv1Q8CJDYuvzkUZwEzwTdXElsjylrtTc5aSLw==
 
-intl-messageformat@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-2.2.0.tgz#345bcd46de630b7683330c2e52177ff5eab484fc"
+intl-messageformat@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-3.1.2.tgz#031a71d4ef1bcb4d2bca93255977bb5c7ca8f8f0"
+  integrity sha512-NNuoVza1J+x3x+kSelcFgVZvXc5ZfQzWL/BySUZ79EFcHc+TUGyvmB7tNMq5xeHPzhHSylo39HEx4t3AIvLzlg==
   dependencies:
-    intl-messageformat-parser "1.4.0"
+    intl-messageformat-parser "1.6.2"
+    intl-pluralrules "^1.0.1"
+
+intl-pluralrules@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/intl-pluralrules/-/intl-pluralrules-1.0.1.tgz#2d739aa754045e326dececa61249cc900af5b0d7"
+  integrity sha512-Y1ZUnofLtjH1qTQSH8ez05hBIi14Cc53GDtv5sv6HVYdSh4zxK/Dqw156luucmDbx+Yh+rOQ1bQTEMUKeu4dMQ==
+  dependencies:
+    make-plural "^4.3.0"
 
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
@@ -3690,6 +3700,13 @@ make-dir@^1.0.0, make-dir@^1.3.0:
 make-plural@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-2.1.3.tgz#2f85208c37fa7ee8c5e36bb5a6c05c5e00a44e31"
+
+make-plural@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-4.3.0.tgz#f23de08efdb0cac2e0c9ba9f315b0dff6b4c2735"
+  integrity sha512-xTYd4JVHpSCW+aqDof6w/MebaMVNTVYBZhbB/vi513xXdiPT92JMVCo0Jq8W2UZnzYRFeVbQiQ+I25l13JuKvA==
+  optionalDependencies:
+    minimist "^1.2.0"
 
 makeerror@1.0.x:
   version "1.0.11"

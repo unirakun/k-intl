@@ -33,7 +33,7 @@
     "babel-jest": "^24.1.0",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
-    "enzyme": "^3.9.0",
+    "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",

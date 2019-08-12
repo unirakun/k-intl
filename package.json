@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "fbjs": "^1.0.0",
-    "intl-messageformat": "^2.2.0"
+    "intl-messageformat": "^6.1.4"
   },
   "peerDependencies": {
     "react": "^16.8.2"
